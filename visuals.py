@@ -6,21 +6,22 @@ import seaborn as sns
 
 fig = plt.figure(figsize=(7,5))
 axes = fig.add_subplot(1,1,1)
-axes.set_xlim(0,2000)
+axes.set_xlim(0,500)
 
-palette = ['red', 'yellow', 'purple']
+
 
 y1, y2, y3 = [], [], []
 def animate(i):
     y1 = pts_seq[i]
-    y2 = reb_seq[i]
-    y3 = ast_seq[i]
-    plt.barh(range(3), sorted([y1, y2, y3]), color=palette)
+    axes.cla()
+    plt.barh([0], y1, color=['blue'])
+    # td = {"Points":y1}
+    # tcks = [i[0] for i in td]
 
-    td = {"Points":y1, "Rebounds":y2, "Assists":y3}
-    tcks = [i[0] for i in td]
+    plt.title("Seattle Seahawks 2023-2024 Total Points by Week: {} ".format(df['Week'][i]))
+    axes.set_xlim(0,500)
+    plt.gca().tick_params(left=False)
+    print(i, pts_seq[i])
 
-    plt.title("Lebron James Rookie Season Stats by Date: {} ".format(df['Date'][i]))
-
-visual = FuncAnimation(fig, animate, interval=100)
+visual = FuncAnimation(fig, animate, frames=len(pts_seq), interval=500)
 plt.show()
