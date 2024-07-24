@@ -1,4 +1,4 @@
-from webscraper import *
+from data import *
 from matplotlib import animation
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -13,16 +13,30 @@ palette = ['black', 'yellow', 'blue', 'red']
 
 y1, y2, y3, y4 = [], [], [], []
 def animate(i):
-    y1 = sequences[0][i]
-    y2 = sequences[1][i]
-    y3 = sequences[2][i]
-    y4 = sequences[3][i]
+    az_score = sequences[0][i]
+    la_score = sequences[1][i]
+    sea_score = sequences[2][i]
+    sf_score = sequences[3][i]
 
+    sorted_scores = sorted([az_score, la_score, sea_score, sf_score])
+    sorted_indices = []
+
+    if i > 0:
+        for score in sorted_scores:
+            for ind in range(0, len(sequences)):
+                if sequences[ind][i] == score and ind not in sorted_indices:
+                    sorted_indices.append(ind)
+        sorted_teams = [teams[idx] for idx in sorted_indices]
+        sorted_colors = [palette[idx] for idx in sorted_indices]
+    else:
+        sorted_teams = teams
+        sorted_colors = palette
+    
     axes.cla()
     plt.grid(axis='x')
     plt.xlabel("Points")
-    plt.xticks(np.arange(0, 500, 50))
-    plt.barh(['Cardinals', 'Rams', 'Seahawks', '49ers'], [y1, y2, y3, y4], color=palette)
+    axes.set_xlim(0, 500)
+    plt.barh(sorted_teams, sorted_scores, color=sorted_colors)
     plt.bar_label(plt.gca().containers[0], label_type='edge', padding=2)
 
     plt.title("NFC West Total Points Scored 2023-2024 | Week {} ".format(df['Week'][i]))

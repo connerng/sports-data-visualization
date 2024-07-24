@@ -9,6 +9,7 @@ url_la = 'https://www.pro-football-reference.com/teams/ram/2023/gamelog/'
 url_az = 'https://www.pro-football-reference.com/teams/crd/2023/gamelog/'
 
 urls = [url_az, url_la, url_sea, url_sf]
+teams = ['Cardinals', 'Rams', 'Seahawks', '49ers']
 sequences = []
 
 for url in urls:
@@ -66,3 +67,4 @@ for url in urls:
         pts_seq.append(pts_sum)
     
     sequences.append(pts_seq)
+    print(pts_seq)
