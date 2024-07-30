@@ -21,27 +21,28 @@ import csv
 # url_kc = 'https://www.pro-football-reference.com/teams/kan/2023/gamelog/'
 # url_lv = 'https://www.pro-football-reference.com/teams/rai/2023/gamelog/'
 # url_lac = 'https://www.pro-football-reference.com/teams/sdg/2023/gamelog/'
-url_lar = 'https://www.pro-football-reference.com/teams/ram/2023/gamelog/'
-url_mia = 'https://www.pro-football-reference.com/teams/mia/2023/gamelog/'
-url_min = 'https://www.pro-football-reference.com/teams/min/2023/gamelog/'
-# url_ne = 'https://www.pro-football-reference.com/teams/nwe/2023/gamelog/'
-# url_no = 'https://www.pro-football-reference.com/teams/nor/2023/gamelog/'
-# url_nyg = 'https://www.pro-football-reference.com/teams/nyg/2023/gamelog/'
-# url_nyj = 'https://www.pro-football-reference.com/teams/nyj/2023/gamelog/'
-# url_phi = 'https://www.pro-football-reference.com/teams/phi/2023/gamelog/'
-# url_pit = 'https://www.pro-football-reference.com/teams/pit/2023/gamelog/'
-# url_sf = 'https://www.pro-football-reference.com/teams/sfo/2023/gamelog/'
-# url_sea = 'https://www.pro-football-reference.com/teams/sea/2023/gamelog/'
-# url_tb = 'https://www.pro-football-reference.com/teams/tam/2023/gamelog/'
-# url_ten = 'https://www.pro-football-reference.com/teams/oti/2023/gamelog/'
-# url_wsh = 'https://www.pro-football-reference.com/teams/was/2023/gamelog/'
+# url_lar = 'https://www.pro-football-reference.com/teams/ram/2023/gamelog/'
+# url_mia = 'https://www.pro-football-reference.com/teams/mia/2023/gamelog/'
+# url_min = 'https://www.pro-football-reference.com/teams/min/2023/gamelog/'
+url_ne = 'https://www.pro-football-reference.com/teams/nwe/2023/gamelog/'
+url_no = 'https://www.pro-football-reference.com/teams/nor/2023/gamelog/'
+url_nyg = 'https://www.pro-football-reference.com/teams/nyg/2023/gamelog/'
+url_nyj = 'https://www.pro-football-reference.com/teams/nyj/2023/gamelog/'
+url_phi = 'https://www.pro-football-reference.com/teams/phi/2023/gamelog/'
+url_pit = 'https://www.pro-football-reference.com/teams/pit/2023/gamelog/'
+url_sf = 'https://www.pro-football-reference.com/teams/sfo/2023/gamelog/'
+url_sea = 'https://www.pro-football-reference.com/teams/sea/2023/gamelog/'
+url_tb = 'https://www.pro-football-reference.com/teams/tam/2023/gamelog/'
+url_ten = 'https://www.pro-football-reference.com/teams/oti/2023/gamelog/'
+url_wsh = 'https://www.pro-football-reference.com/teams/was/2023/gamelog/'
 
 
 # urls = [url_az, url_atl, url_bal, url_buf, url_car, url_chi, url_cin, url_cle, url_dal, url_den, url_det, url_gb, 
 #         url_hou, url_ind, url_jax, url_kc, url_lv, url_lac] 
-urls = [url_lar, url_mia, url_min
-        # url_ne, url_no, url_nyg, url_nyj, url_phi, url_pit, url_sf, 
-        # url_sea, url_tb, url_ten, url_wsh
+urls = [
+# url_lar, url_mia, url_min
+        url_ne, url_no, url_nyg, url_nyj, url_phi, url_pit, url_sf, 
+        url_sea, url_tb, url_ten, url_wsh
         ]
 teams = [
     # "Arizona Cardinals",
@@ -62,20 +63,20 @@ teams = [
     # "Kansas City Chiefs",
     # "Las Vegas Raiders",
     # "Los Angeles Chargers",
-    "Los Angeles Rams",
-    "Miami Dolphins",
-    "Minnesota Vikings",
-#     "New England Patriots",
-#     "New Orleans Saints",
-#     "New York Giants",
-#     "New York Jets",
-#     "Philadelphia Eagles",
-#     "Pittsburgh Steelers",
-#     "San Francisco 49ers",
-#     "Seattle Seahawks",
-#     "Tampa Bay Buccaneers",
-#     "Tennessee Titans",
-#     "Washington Commanders"
+    # "Los Angeles Rams",
+    # "Miami Dolphins",
+    # "Minnesota Vikings",
+    "New England Patriots",
+    "New Orleans Saints",
+    "New York Giants",
+    "New York Jets",
+    "Philadelphia Eagles",
+    "Pittsburgh Steelers",
+    "San Francisco 49ers",
+    "Seattle Seahawks",
+    "Tampa Bay Buccaneers",
+    "Tennessee Titans",
+    "Washington Commanders"
 ]
 sequences = []
 

@@ -5,8 +5,7 @@ import numpy as np
 import pandas as pd
 
 df = pd.read_csv('NFC West 2023-24 Points Scored Animation/pointsbyweek.csv')
-teams = [
-    "Arizona Cardinals",
+teams = ["Arizona Cardinals",
     "Atlanta Falcons",
     "Baltimore Ravens",
     "Buffalo Bills",
@@ -26,34 +25,33 @@ teams = [
     "Los Angeles Chargers",
     "Los Angeles Rams",
     "Miami Dolphins",
-    "Minnesota Vikings"
-    # "New England Patriots",
-    # "New Orleans Saints",
-    # "New York Giants",
-    # "New York Jets",
-    # "Philadelphia Eagles",
-    # "Pittsburgh Steelers",
-    # "San Francisco 49ers",
-    # "Seattle Seahawks",
-    # "Tampa Bay Buccaneers",
-    # "Tennessee Titans",
-    # "Washington Commanders"
-]
+    "Minnesota Vikings",
+    "New England Patriots",
+    "New Orleans Saints",
+    "New York Giants",
+    "New York Jets",
+    "Philadelphia Eagles",
+    "Pittsburgh Steelers",
+    "San Francisco 49ers",
+    "Seattle Seahawks",
+    "Tampa Bay Buccaneers",
+    "Tennessee Titans",
+    "Washington Commanders"]
 
 fig = plt.figure(figsize=(10,7))
 plt.style.use("seaborn-v0_8-dark")
 axes = fig.add_subplot(1,1,1)
 axes.set_xlim(0,500)
-palette = ['#bd002f', 'black', '#570098', '#0a0bcf', '#00b0eb', '#0b0060', '#ff8b1a', '#623600', '#b2b2b2', '#e66400', '#0073cb', 'green', 
-           '#d21534', 'white', '#b39d00', 'red', '#414140', '#28c4ff', '#0323ff', '#23edec', '#8b23ed']
-
+palette = ['#bd002f', '#961d1d', '#570098', '#0a0bcf', '#00b0eb', '#0b0060', '#ff8b1a', '#623600', '#b2b2b2', '#e66400', 
+           '#0073cb', 'green', '#d21534', 'white', '#b39d00', 'red', '#414140', '#28c4ff', '#0323ff', '#23edec', 
+           '#8b23ed', '#051352', '#b2b085', '#000193', '#104215', '#28525b', 'black', '#c2b36a', '#25c431', '#4f4a3d', '#70bee1', '#5b0505']
 
 def animate(i):
     curWeek = "Week " + str(i)
     scores = df[curWeek].values.tolist()
     
     sorted_indices = []
-    sorted_scores = sorted(scores)[11:]
+    sorted_scores = sorted(scores)[22:]
 
     if i > 0:
         for score in sorted_scores:
