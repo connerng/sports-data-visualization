@@ -1,36 +1,71 @@
-from data import *
 from matplotlib import animation
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
+import pandas as pd
 
-fig = plt.figure(figsize=(8,6))
+df = pd.read_csv('NFC West 2023-24 Points Scored Animation/pointsbyweek.csv')
+teams = [
+    "Arizona Cardinals",
+    "Atlanta Falcons",
+    "Baltimore Ravens",
+    "Buffalo Bills",
+    "Carolina Panthers",
+    "Chicago Bears",
+    "Cincinnati Bengals",
+    "Cleveland Browns",
+    "Dallas Cowboys",
+    "Denver Broncos",
+    "Detroit Lions",
+    "Green Bay Packers",
+    "Houston Texans", 
+    "Indianapolis Colts",
+    "Jacksonville Jaguars",
+    "Kansas City Chiefs",
+    "Las Vegas Raiders",
+    "Los Angeles Chargers",
+    # "Los Angeles Rams",
+    # "Miami Dolphins",
+    # "Minnesota Vikings",
+    # "New England Patriots",
+    # "New Orleans Saints",
+    # "New York Giants",
+    # "New York Jets",
+    # "Philadelphia Eagles",
+    # "Pittsburgh Steelers",
+    # "San Francisco 49ers",
+    # "Seattle Seahawks",
+    # "Tampa Bay Buccaneers",
+    # "Tennessee Titans",
+    # "Washington Commanders"
+]
+
+fig = plt.figure(figsize=(10,7))
 plt.style.use("seaborn-v0_8-dark")
 axes = fig.add_subplot(1,1,1)
 axes.set_xlim(0,500)
-palette = ['black', 'yellow', 'blue', 'red']
+palette = ['black', 'black', 'purple', 'blue', 'gray', 'blue', 'orange', 'orange', 'gray', 'orange', 'blue', 'green', 
+           'red', 'white', 'yellow', 'red', 'black', 'yellow']
 
 
-y1, y2, y3, y4 = [], [], [], []
 def animate(i):
-    az_score = sequences[0][i]
-    la_score = sequences[1][i]
-    sea_score = sequences[2][i]
-    sf_score = sequences[3][i]
-
-    sorted_scores = sorted([az_score, la_score, sea_score, sf_score])
+    curWeek = "Week " + str(i)
+    print(curWeek)
+    scores = df[curWeek].values.tolist()
+    
     sorted_indices = []
+    sorted_scores = sorted(scores)[:10]
 
     if i > 0:
         for score in sorted_scores:
-            for ind in range(0, len(sequences)):
-                if sequences[ind][i] == score and ind not in sorted_indices:
+            for ind in range(0, len(scores)):
+                if scores[ind] == score and ind not in sorted_indices:
                     sorted_indices.append(ind)
-        sorted_teams = [teams[idx] for idx in sorted_indices]
-        sorted_colors = [palette[idx] for idx in sorted_indices]
+        sorted_teams = [teams[idx] for idx in sorted_indices][:10]
+        sorted_colors = [palette[idx] for idx in sorted_indices][:10]
     else:
-        sorted_teams = teams
-        sorted_colors = palette
+        sorted_teams = teams[:10]
+        sorted_colors = palette[:10]
     
     axes.cla()
     plt.grid(axis='x')
@@ -39,8 +74,8 @@ def animate(i):
     plt.barh(sorted_teams, sorted_scores, color=sorted_colors)
     plt.bar_label(plt.gca().containers[0], label_type='edge', padding=2)
 
-    plt.title("NFC West Total Points Scored 2023-2024 | Week {} ".format(df['Week'][i]))
+    plt.title("NFC West Total Points Scored 2023-2024 | Week " + str(i))
     axes.set_xlim(0,500)
 
-visual = FuncAnimation(fig, animate, frames=len(sequences[0]), interval=1000)
+visual = FuncAnimation(fig, animate, frames=19, interval=1000)
 plt.show()
