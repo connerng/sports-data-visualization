@@ -24,9 +24,9 @@ teams = [
     "Kansas City Chiefs",
     "Las Vegas Raiders",
     "Los Angeles Chargers",
-    # "Los Angeles Rams",
-    # "Miami Dolphins",
-    # "Minnesota Vikings",
+    "Los Angeles Rams",
+    "Miami Dolphins",
+    "Minnesota Vikings"
     # "New England Patriots",
     # "New Orleans Saints",
     # "New York Giants",
@@ -44,17 +44,16 @@ fig = plt.figure(figsize=(10,7))
 plt.style.use("seaborn-v0_8-dark")
 axes = fig.add_subplot(1,1,1)
 axes.set_xlim(0,500)
-palette = ['black', 'black', 'purple', 'blue', 'gray', 'blue', 'orange', 'orange', 'gray', 'orange', 'blue', 'green', 
-           'red', 'white', 'yellow', 'red', 'black', 'yellow']
+palette = ['#bd002f', 'black', '#570098', '#0a0bcf', '#00b0eb', '#0b0060', '#ff8b1a', '#623600', '#b2b2b2', '#e66400', '#0073cb', 'green', 
+           '#d21534', 'white', '#b39d00', 'red', '#414140', '#28c4ff', '#0323ff', '#23edec', '#8b23ed']
 
 
 def animate(i):
     curWeek = "Week " + str(i)
-    print(curWeek)
     scores = df[curWeek].values.tolist()
     
     sorted_indices = []
-    sorted_scores = sorted(scores)[:10]
+    sorted_scores = sorted(scores)[11:]
 
     if i > 0:
         for score in sorted_scores:
@@ -70,12 +69,12 @@ def animate(i):
     axes.cla()
     plt.grid(axis='x')
     plt.xlabel("Points")
-    axes.set_xlim(0, 500)
+    axes.set_xlim(0, 600)
     plt.barh(sorted_teams, sorted_scores, color=sorted_colors)
     plt.bar_label(plt.gca().containers[0], label_type='edge', padding=2)
 
     plt.title("NFC West Total Points Scored 2023-2024 | Week " + str(i))
-    axes.set_xlim(0,500)
+    axes.set_xlim(0,600)
 
 visual = FuncAnimation(fig, animate, frames=19, interval=1000)
 plt.show()
