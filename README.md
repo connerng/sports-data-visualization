@@ -5,9 +5,9 @@ A Python script that uses BeautifulSoup to scrape game log statistics from the P
 
 ## Preview
 
-![PreviewGif](https://github.com/user-attachments/assets/250e59eb-bd84-43ef-9477-f193bdeeec31)
+![NFL 2023-24 Points Scored Animation Preview](https://github.com/user-attachments/assets/3ca1eb34-08d5-484e-b9b1-6c2060274aa3)
 
-<img width="569" alt="Preview" src="https://github.com/user-attachments/assets/56ccdf9e-8922-4273-8671-0910c7361e81">
+
 
 ## References
 Arizona Cardinals 2023 Games and Schedule. (2024). Pro-Football-Reference.com. Retrieved July 24, 2024, from https://www.pro-football-reference.com/teams/crd/2023/gamelog/
