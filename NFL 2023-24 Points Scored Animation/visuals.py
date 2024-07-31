@@ -4,7 +4,7 @@ from matplotlib.animation import FuncAnimation
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv('NFL 2023-24 Points Scored Animation/pointsbyweek.csv')
+df = pd.read_csv('NFC West 2023-24 Points Scored Animation/pointsbyweek.csv')
 teams = ["Arizona Cardinals",
     "Atlanta Falcons",
     "Baltimore Ravens",
