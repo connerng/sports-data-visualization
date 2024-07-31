@@ -148,7 +148,7 @@ header =['Team', 'Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'We
          'Week 11', 'Week 12', 'Week 13', 'Week 14', 'Week 15', 'Week 16', 'Week 17', 'Week 18']
 
 if not networkError:
-    with open('NFC West 2023-24 Points Scored Animation/pointsbyweek.csv', 'w') as f:
+    with open('NFL 2023-24 Points Scored Animation/pointsbyweek.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(header)
         for i in range(0, len(teams)):

@@ -4,7 +4,7 @@ from matplotlib.animation import FuncAnimation
 import numpy as np
 import pandas as pd
 
-df = pd.read_csv('NFC West 2023-24 Points Scored Animation/pointsbyweek.csv')
+df = pd.read_csv('NFL 2023-24 Points Scored Animation/pointsbyweek.csv')
 teams = ["Arizona Cardinals",
     "Atlanta Falcons",
     "Baltimore Ravens",
@@ -71,7 +71,7 @@ def animate(i):
     plt.barh(sorted_teams, sorted_scores, color=sorted_colors)
     plt.bar_label(plt.gca().containers[0], label_type='edge', padding=2)
 
-    plt.title("NFC West Total Points Scored 2023-2024 | Week " + str(i))
+    plt.title("NFL Teams Total Points Scored 2023-2024 | Week " + str(i))
     axes.set_xlim(0,600)
 
 visual = FuncAnimation(fig, animate, frames=19, interval=1000)
